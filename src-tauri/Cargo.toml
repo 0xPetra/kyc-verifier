@@ -1,0 +1,38 @@
+[package]
+name = "app"
+version = "1.0.0"
+description = "A Tauri Template"
+authors = ["Michael Araque"]
+license = ""
+repository = ""
+edition = "2021"
+rust-version = "1.65"
+build = "src/build.rs"
+
+[build-dependencies]
+tauri-build = { version = "1.2.1", features = [] }
+
+[dependencies]
+
+# Serialization
+serde = { version = "1.0.163", features = ["derive"] }
+serde_json = { version = "1" }
+hex = "0.4"
+
+tauri = { version = "1.2.2", features = ["api-all", "icon-ico", "icon-png", "system-tray"] }
+tauri-plugin-window-state = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+tauri-plugin-store = { git = "https://github.com/tauri-apps/tauri-plugin-store", rev = "9bd993a" }
+tauri-plugin-single-instance = { git = "https://github.com/tauri-apps/plugins-workspace" }
+# zksync-web3-rs = { git = "https://github.com/0xPetra/zksync-web3-rs" }
+zksync-web3-rs = { path = "../../zksync-web3-rs" }
+
+[features]
+default = [ "custom-protocol" ]
+custom-protocol = [ "tauri/custom-protocol" ]
+
+[profile.release]
+panic = "abort" # Strip expensive panic clean-up logic
+codegen-units = 1 # Compile crates one after another so the compiler can optimize better
+lto = true # Enables link to optimizations
+opt-level = "s" # Optimize for binary size
+# strip = true  # Automatically strip symbols from the binary.
