@@ -4,7 +4,6 @@ import {
   CloseButton,
   Flex,
   Icon,
-  useColorModeValue,
   Drawer,
   DrawerContent,
   Text,
@@ -13,13 +12,6 @@ import {
   FlexProps,
   Image
 } from '@chakra-ui/react';
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-} from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import { SidebarLinkItems } from '@/common/constants/navigation';
 import { Link } from 'react-router-dom';

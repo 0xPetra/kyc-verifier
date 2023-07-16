@@ -1,7 +1,6 @@
 import { IconType } from "react-icons";
 import { FiHome, FiTrendingUp, FiCompass, FiStar } from "react-icons/fi";
-import { PiWalletBold } from "react-icons/pi";
-import { GiMatterStates } from "react-icons/gi";
+import { PiWalletBold, PiUser } from "react-icons/pi";
 
 interface LinkItemProps {
   name: string;
@@ -12,6 +11,7 @@ interface LinkItemProps {
 export const SidebarLinkItems: Array<LinkItemProps> = [
   { name: 'Welcome', to: '/', icon: FiHome },
   { name: 'Wallet', to: '/wallet', icon: PiWalletBold },
-  { name: 'Tauri', to: '/tauri', icon: FiCompass },
-  { name: 'Zustand', to: "/zustand", icon: GiMatterStates },
+  { name: 'Identity', to: '/identity', icon: PiUser },
+  // { name: 'Tauri', to: '/tauri', icon: FiCompass },
+  // { name: 'Zustand', to: "/zustand", icon: GiMatterStates },
 ];

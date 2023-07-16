@@ -23,8 +23,12 @@ tauri = { version = "1.2.2", features = ["api-all", "icon-ico", "icon-png", "sys
 tauri-plugin-window-state = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
 tauri-plugin-store = { git = "https://github.com/tauri-apps/tauri-plugin-store", rev = "9bd993a" }
 tauri-plugin-single-instance = { git = "https://github.com/tauri-apps/plugins-workspace" }
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+dotenv = "0.15"
 # zksync-web3-rs = { git = "https://github.com/0xPetra/zksync-web3-rs" }
 zksync-web3-rs = { path = "../../zksync-web3-rs" }
+risc0-zkvm = { version = "0.16.1" }
 
 [features]
 default = [ "custom-protocol" ]
