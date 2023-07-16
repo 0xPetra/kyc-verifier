@@ -6,7 +6,7 @@ export interface WalletStore {
   ethAddress: string;
   eraPk: string;
   setEthAddress: (address: string) => void;
-  setEraPk: (address: string) => void;
+  setEraPk: (eraPk: string) => void;
 
 }
 
@@ -15,11 +15,12 @@ export const mutative = (config) =>
 
 type StoreSet = (fn: (draft: Draft<WalletStore>) => void) => void;
 
-const store = (set: StoreSet) => ({
+export const store = (set: StoreSet) => ({
   ethAddress: null,
-  setEthAddress: (address) => set(() => ({ ethAddress: address })),
   eraPk: null,
-  setEraPk: (address) => set(() => ({ eraPk: address })),
-
+  setEthAddress: (address: string) => set((state) => { state.ethAddress = address }),
+  setEraPk: (address: string) => set((state) => { state.eraPk = address }),
 });
+
 export const useWalletStore = create<WalletStore>()(devtools(mutative(store)));
+
