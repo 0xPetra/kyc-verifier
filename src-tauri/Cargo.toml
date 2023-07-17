@@ -30,6 +30,11 @@ dotenv = "0.15"
 zksync-web3-rs = { path = "../../zksync-web3-rs" }
 risc0-zkvm = { version = "0.16.1" }
 
+# Hashing
+sha2 = "0.10.7"
+hmac = "0.12.1"
+hex-literal = "0.4.1"
+
 [features]
 default = [ "custom-protocol" ]
 custom-protocol = [ "tauri/custom-protocol" ]

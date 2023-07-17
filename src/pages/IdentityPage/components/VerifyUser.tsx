@@ -1,0 +1,97 @@
+import { Box, Text } from '@chakra-ui/react';
+import { Heading, Button, Link } from '@chakra-ui/react';
+import { invoke } from '@tauri-apps/api/tauri'
+import { useWalletStore } from '../../../stores/useWalletStore';  // replace with your actual store path
+
+import React, { useState } from 'react';
+import { P } from '@tauri-apps/api/event-41a9edf5';
+
+interface CustomResponse {
+  message: string
+}
+
+export const VerifyUser = () => {
+  const { eraPk } = useWalletStore((state) => ({
+    eraPk: state.eraPk
+  }));
+  const [kycInfo, setKycInfo] = useState<any | null>(null)
+  const [userData, setUser] = useState<any | null>(null)
+  const [userProof, setUserProof] = useState<any | null>(null)
+
+
+  const verifyKYCHandler = async (event) => {
+    event.preventDefault();
+
+    if (eraPk === null) return
+
+    const res: CustomResponse = await invoke('create_veriff_session');
+    if (res !== undefined) {
+      const parsed = JSON.parse(JSON.parse(res.message))
+
+      setKycInfo(parsed);
+    } else {
+      console.error(res)
+    }
+  }
+
+  const updateStatus = async () => {
+    verifyKYCHandler(null)
+  }
+
+  const generateProof = async () => {
+    const sessionToken = kycInfo?.verification?.sessionToken;
+    const sessionid = kycInfo?.verification?.id;
+    if (eraPk === null || kycInfo?.verification === null) return
+    const res: CustomResponse = await invoke('generate_proof', { erapk: eraPk, sessiontoken: sessionToken, sessionid: sessionid });
+
+    if (res !== undefined) {
+      const parsed = JSON.parse(JSON.parse(res.message))
+      setUserProof(parsed);
+    } else {
+      console.error(res)
+    }
+  }
+
+  const Items = () => {
+    if (kycInfo !== null) {
+      return (
+        <>
+          <Text>Status: {kycInfo?.verification?.status ?? "-"}</Text>
+          <Link href={kycInfo?.verification?.url} isExternal>
+            <Button type="submit">
+              Complete verification
+            </Button>
+          </Link>
+          <Button onClick={updateStatus} mt={5}>
+            Update status
+          </Button>
+          <Button onClick={generateProof} mt={5}>
+            Create Private Proof
+          </Button>
+        </>
+      )
+    } else {
+      return (
+        <div>
+          <Text>Step 1</Text>
+          <Text>Complete verification</Text>
+          <Box display="flex" justifyContent="flex-end">
+            <Button type="submit" onClick={verifyKYCHandler}>
+              Verify
+            </Button>
+          </Box>
+        </div>
+      )
+    }
+
+  }
+
+  return (
+    <Box maxW="400px" mx="auto" p={4}>
+      <Text>{JSON.stringify(kycInfo)}</Text>
+      {/* <Text>Address: {JSON.stringify(eraPk)}</Text> */}
+      <Heading as='h5' mb={4}>Verify and mint</Heading>
+      <Items />
+    </Box>
+  );
+};

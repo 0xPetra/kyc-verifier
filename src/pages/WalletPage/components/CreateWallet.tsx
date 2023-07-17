@@ -6,16 +6,12 @@ import { useWalletStore } from '../../../stores/useWalletStore';  // replace wit
 import React, { useState } from 'react';
 import { IconType } from 'react-icons';
 
-type ButtonWithIconProps = ButtonProps & {
-  icon: IconType;
-  label: string;
-}
 
 interface CustomResponse {
   message: string
 }
 
-export const CreateWallet = (props: ButtonWithIconProps) => {
+export const CreateWallet = () => {
   const { eraPk, setEraPk } = useWalletStore((state) => ({
     eraPk: state.eraPk,
     setEraPk: state.setEraPk

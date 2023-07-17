@@ -1,9 +1,6 @@
 import { Box, Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
-import { invoke } from '@tauri-apps/api/tauri'
 import { IoLogInOutline } from 'react-icons/io5'
-import { BsWindow } from 'react-icons/bs';
-import { appWindow } from "@tauri-apps/api/window";
 import { BoxAction, CreateWallet } from '@/pages/WalletPage/components';
 
 interface CustomResponse {

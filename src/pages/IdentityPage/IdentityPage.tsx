@@ -1,10 +1,9 @@
-import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Text } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react'
-import { invoke } from '@tauri-apps/api/tauri'
+import { Text } from '@chakra-ui/react';
+import React from 'react'
 import { IoLogInOutline } from 'react-icons/io5'
 import { useWalletStore } from '../../stores/useWalletStore';  // replace with your actual store path
 import { BoxAction } from '@/pages/IdentityPage/components';
-
+import { VerifyUser } from '@/pages/IdentityPage/components/index';
 interface CustomResponse {
   message: string
 }
@@ -15,31 +14,9 @@ const IdentityPage: React.FC = () => {
     setEraPk: state.setEraPk
   }));
 
-  const IdentityInstance = () => {
-    return (
-      <>
-        <Tabs isLazy>
-          <TabList>
-            <Tab>Identity</Tab>
-          </TabList>
-
-          <TabPanels>
-            <TabPanel>
-              {/* Balances UI */}
-              <Box p={4} bg="gray.200" borderRadius="md">
-                {/* Balances content goes here */}
-                <p>Display your balances here</p>
-              </Box>
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
-      </>
-    )
-  }
-
   return (
-    <BoxAction title="Wallet" icon={IoLogInOutline}>
-      {eraPk ? <IdentityInstance /> : <Text>You must create a wallet first</Text>}
+    <BoxAction title="Identity" icon={IoLogInOutline}>
+      {eraPk ? <VerifyUser /> : <Text>You must create a wallet first</Text>}
     </BoxAction>
   )
 }

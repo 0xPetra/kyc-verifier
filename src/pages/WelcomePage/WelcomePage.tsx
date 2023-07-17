@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Heading, Flex } from '@chakra-ui/react'
+import { Box, Heading, Flex, Text } from '@chakra-ui/react'
 import { Technology, TechStack } from '@/pages/WelcomePage/components';
 
 const WelcomePage: React.FC = () => {
@@ -11,23 +11,28 @@ const WelcomePage: React.FC = () => {
         <Heading size="lg" color="primary.400">zkWallet</Heading>
       </Box>
 
-      {/* <Box display="flex" flexDirection="column" gap={6}>
-        <TechStack label="Core">
-          <Technology label="Tauri" image="technologies/tauri.svg" />
-          <Technology label="Typescript" image="technologies/typescript.svg" />
-          <Technology label="ViteJS" image="technologies/vitejs.svg" />
-          <Technology label="ReactJS" image="technologies/react.svg" />
-        </TechStack>
+      <Box as="section" whiteSpace="nowrap" textAlign="center">
+        <Text>
+          A desktop zkSync Wallet with privacy in mind.
 
-        <TechStack label="Utils">
-          <Technology label="Zustand" image="technologies/zustand.png" />
-        </TechStack>
+          <Heading size="md" mt={5}>
+            Present Features
+          </Heading>
+          <ul>
+            <li>Create ZkSync Era Wallet</li>
+            <li>Transfer between accounts</li>
+            <li>Create KYC proof</li>
+          </ul>
 
-        <TechStack label="CSS">
-          <Technology label="Chakra UI" image="technologies/chakra-ui.svg" />
-        </TechStack>
-
-      </Box> */}
+          <Heading size="md" mt={5}>
+            Potential features
+          </Heading>
+          <ul>
+            <li>Limit daily spending</li>
+            <li>Submit proofs on-chain</li>
+          </ul>
+        </Text>
+      </Box>
     </Flex>
 
   )
