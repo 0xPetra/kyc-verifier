@@ -14,7 +14,7 @@ When the prerequisites are correctly installed use
 yarn or npm
 ```
 
-You will need to clone thids repository: https://github.com/0xPetra/zksync-web3-rs
+You will need to clone this repository to integrate zkSync Era: https://github.com/0xPetra/zksync-web3-rs
 
 ### Development
 
