@@ -19,7 +19,12 @@ serde = { version = "1.0.163", features = ["derive"] }
 serde_json = { version = "1" }
 hex = "0.4"
 
-tauri = { version = "1.2.2", features = ["api-all", "icon-ico", "icon-png", "system-tray"] }
+tauri = { version = "1.2.2", features = [
+    "api-all",
+    "icon-ico",
+    "icon-png",
+    "system-tray",
+] }
 tauri-plugin-window-state = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
 tauri-plugin-store = { git = "https://github.com/tauri-apps/tauri-plugin-store", rev = "9bd993a" }
 tauri-plugin-single-instance = { git = "https://github.com/tauri-apps/plugins-workspace" }
@@ -28,7 +33,8 @@ tokio = { version = "1", features = ["full"] }
 dotenv = "0.15"
 # zksync-web3-rs = { git = "https://github.com/0xPetra/zksync-web3-rs" }
 zksync-web3-rs = { path = "../../zksync-web3-rs" }
-risc0-zkvm = { version = "0.16.1" }
+json-methods = { path = "risczero/methods" }
+risc0-zkvm = "0.16.1"
 
 # Hashing
 sha2 = "0.10.7"
@@ -36,12 +42,12 @@ hmac = "0.12.1"
 hex-literal = "0.4.1"
 
 [features]
-default = [ "custom-protocol" ]
-custom-protocol = [ "tauri/custom-protocol" ]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
 
 [profile.release]
-panic = "abort" # Strip expensive panic clean-up logic
+panic = "abort"   # Strip expensive panic clean-up logic
 codegen-units = 1 # Compile crates one after another so the compiler can optimize better
-lto = true # Enables link to optimizations
-opt-level = "s" # Optimize for binary size
+lto = true        # Enables link to optimizations
+opt-level = "s"   # Optimize for binary size
 # strip = true  # Automatically strip symbols from the binary.

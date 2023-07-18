@@ -20,6 +20,7 @@ const WelcomePage: React.FC = () => {
           </Heading>
           <ul>
             <li>Create ZkSync Era Wallet</li>
+            <li>Retrieve balance</li>
             <li>Transfer between accounts</li>
             <li>Create KYC proof</li>
           </ul>

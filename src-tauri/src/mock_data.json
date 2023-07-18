@@ -1,0 +1,218 @@
+{
+    "status": "success",
+    "person": {
+        "id": "b00a203e-2524-4ded-867b-b4e281a2c96b",
+        "firstName": "David",
+        "lastName": null,
+        "idCode": "062.449.269-94",
+        "dateOfBirth": "1942-09-22",
+        "gender": null,
+        "nationality": null,
+        "placeOfBirth": null,
+        "citizenships": [],
+        "pepSanctionMatches": [
+            {
+                "provider": "Comply Advantage",
+                "numberOfMatches": 1,
+                "date": "2022-07-12T12:42:30.573Z",
+                "matches": [],
+                "hits": [
+                    {
+                        "doc": {
+                            "id": "4KJL9THDX9ZNV4W",
+                            "lastUpdatedUtc": "2022-07-09T12:50:34Z",
+                            "createdUtc": "2020-03-17T19:32:58Z",
+                            "fields": [
+                                {
+                                    "name": "Original Country Text",
+                                    "source": "world-bank-star-asset-recovery-watch",
+                                    "value": "European Union"
+                                },
+                                {
+                                    "name": "Nationality",
+                                    "source": "complyadvantage",
+                                    "value": "Libya"
+                                },
+                                {
+                                    "name": "Original Place of Birth Text",
+                                    "source": "hong-kong-special-administrative-region-sanctions-issued-under-the-un-sanctions-ordinance",
+                                    "value": "Sirte"
+                                },
+                                {
+                                    "name": "Original Country Text",
+                                    "source": "complyadvantage",
+                                    "value": "East Africa"
+                                }
+                            ],
+                            "types": [
+                                "adverse-media",
+                                "adverse-media-v2-cybercrime",
+                                "adverse-media-v2-financial-aml-cft",
+                                "adverse-media-v2-financial-difficulty",
+                                "adverse-media-v2-fraud-linked",
+                                "adverse-media-v2-general-aml-cft",
+                                "adverse-media-v2-narcotics-aml-cft",
+                                "adverse-media-v2-other-minor",
+                                "adverse-media-v2-other-serious",
+                                "adverse-media-v2-property",
+                                "adverse-media-v2-terrorism",
+                                "adverse-media-v2-violence-aml-cft",
+                                "adverse-media-v2-violence-non-aml-cft",
+                                "pep",
+                                "pep-class-1",
+                                "pep-class-2",
+                                "sanction",
+                                "warning"
+                            ],
+                            "name": "Mouammar Mohammed Abu Minyar Kadhafi",
+                            "entityType": "person",
+                            "aka": [
+                                {
+                                    "name": "Moamarr Qaddafi"
+                                },
+                                {
+                                    "name": "Moammar Kaddafi"
+                                },
+                                {
+                                    "name": "Muammer al Gaddafi"
+                                },
+                                {
+                                    "name": "মোৱাম্মাৰ গাড্ডাফি"
+                                },
+                                {
+                                    "name": "Moammar Khadafi"
+                                }
+                            ],
+                            "associates": [
+                                {
+                                    "association": "spouse",
+                                    "name": "Fatiha al-Nuri"
+                                },
+                                {
+                                    "association": "spouse",
+                                    "name": "Fatiha al-Nuri Gaddafi"
+                                },
+                                {
+                                    "association": "child",
+                                    "name": "Qadhafi Muammar Mohammed Abu Minyar"
+                                },
+                                {
+                                    "association": "spouse",
+                                    "name": "Safia el-Brasai"
+                                },
+                                {
+                                    "association": "spouse",
+                                    "name": "Safia el-Brasai Gaddafi"
+                                }
+                            ],
+                            "sources": [
+                                "argentina-ministerio-de-relaciones-exteriores-y-culto-sanciones-de-la-onu",
+                                "belarus-state-security-agency-list-of-organizations-and-individuals-involved-in-terrorist-activities"
+                            ],
+                            "keywords": [],
+                            "media": [
+                                {
+                                    "date": "2021-11-16T00:00:00Z",
+                                    "snippet": "Sang Tan Judges in the High Court in London have ruled that Saleh Ibrahim Mabrouk, a former aide of Libyan leader Colonel Muammar Gaddafi, was partly to blame for the murder of PC Yvonne Fletcher. The gunman",
+                                    "title": "'Justice at Last': Former Gaddafi Aide Found Liable for 1984 Police Officer Murder by UK High Court - 16.11.2021, Sputnik International",
+                                    "url": "https://sputniknews.com/amp/20211116/justice-at-last-former-gaddafi-aide-found-liable-for-1984-police-officer-murder-by-uk-high-court-1090775876.html"
+                                }
+                            ],
+                            "assets": [
+                                {
+                                    "publicUrl": "http://complyadvantage-asset.s3.amazonaws.com/76993a49-2d1e-4397-9e35-1e20f2b7dfa8.pdf",
+                                    "source": "world-bank-star-asset-recovery-watch",
+                                    "type": "pdf"
+                                }
+                            ],
+                            "sourceNotes": {
+                                "argentinaMinisterioDeRelacionesExterioresYCultoSancionesDeLaOnu": {
+                                    "amlTypes": [
+                                        "sanction"
+                                    ],
+                                    "listingStartedUtc": "2019-09-26T00:00:00Z",
+                                    "name": "Argentina Ministerio de Relaciones Exteriores y Culto Sanciones de la ONU",
+                                    "url": "https://www.cancilleria.gob.ar/es/politica-exterior/seguridad-internacional/comite-de-sanciones"
+                                },
+                                "belarusStateSecurityAgencyListOfOrganizationsAndIndividualsInvolvedInTerroristActivities": {
+                                    "amlTypes": [
+                                        "sanction"
+                                    ],
+                                    "listingStartedUtc": "2019-08-28T00:00:00Z",
+                                    "name": "Belarus State Security Agency List of Organizations and Individuals Involved in Terrorist Activities",
+                                    "url": "http://kgb.by/ru/perechen-inf-ru/"
+                                },
+                                "complyadvantageAdverseMedia": {
+                                    "amlTypes": [
+                                        "adverse-media",
+                                        "adverse-media-v2-cybercrime",
+                                        "adverse-media-v2-financial-aml-cft",
+                                        "adverse-media-v2-financial-difficulty",
+                                        "adverse-media-v2-fraud-linked",
+                                        "adverse-media-v2-general-aml-cft",
+                                        "adverse-media-v2-narcotics-aml-cft",
+                                        "adverse-media-v2-other-minor",
+                                        "adverse-media-v2-other-serious",
+                                        "adverse-media-v2-property",
+                                        "adverse-media-v2-terrorism",
+                                        "adverse-media-v2-violence-aml-cft",
+                                        "adverse-media-v2-violence-non-aml-cft"
+                                    ],
+                                    "countryCodes": [
+                                        "AE",
+                                        "AM",
+                                        "AR"
+                                    ],
+                                    "name": "ComplyAdvantage Adverse Media"
+                                },
+                                "dfatAustraliaList": {
+                                    "amlTypes": [
+                                        "sanction"
+                                    ],
+                                    "countryCodes": [
+                                        "LY",
+                                        "OM"
+                                    ],
+                                    "listingStartedUtc": "2011-02-26T00:00:00Z",
+                                    "name": "DFAT Australia Consolidated Sanctions List",
+                                    "url": "https://www.dfat.gov.au/international-relations/security/sanctions/Pages/consolidated-list.aspx"
+                                }
+                            },
+                        },
+                        "matchTypes": [
+                            "aka_exact",
+                            "year_of_birth"
+                        ],
+                        "matchTypesDetails": {
+                            "gaddafiMuammar": {
+                                "matchTypes": {
+                                    "gaddafi": [
+                                        "name_exact"
+                                    ],
+                                    "muammar": [
+                                        "name_exact"
+                                    ]
+                                },
+                                "type": "aka"
+                            },
+                            "muammarGaddafi": {
+                                "matchTypes": {
+                                    "gaddafi": [
+                                        "name_exact"
+                                    ],
+                                    "muammar": [
+                                        "name_exact"
+                                    ]
+                                },
+                                "type": "aka"
+                            }
+                        },
+                        "matchStatus": "potential_match",
+                        "isWhitelisted": false,
+                        "score": 24.46217
+                    }
+                ]
+            }
+        ]
+    }
+}

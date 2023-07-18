@@ -9,14 +9,14 @@ interface CustomResponse {
 }
 
 const IdentityPage: React.FC = () => {
-  const { eraPk, setEraPk } = useWalletStore((state) => ({
-    eraPk: state.eraPk,
-    setEraPk: state.setEraPk
+  const { eraWallet, setWallet } = useWalletStore((state) => ({
+    eraWallet: state.eraWallet,
+    setWallet: state.setWallet
   }));
 
   return (
     <BoxAction title="Identity" icon={IoLogInOutline}>
-      {eraPk ? <VerifyUser /> : <Text>You must create a wallet first</Text>}
+      {eraWallet ? <VerifyUser /> : <Text>You must create a wallet first</Text>}
     </BoxAction>
   )
 }

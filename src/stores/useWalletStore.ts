@@ -4,9 +4,9 @@ import { create as mutativeCreate, Draft } from 'mutative';
 
 export interface WalletStore {
   ethAddress: string;
-  eraPk: string;
+  eraWallet: string;
   setEthAddress: (address: string) => void;
-  setEraPk: (eraPk: string) => void;
+  setWallet: (address: string) => void;
 
 }
 
@@ -17,10 +17,11 @@ type StoreSet = (fn: (draft: Draft<WalletStore>) => void) => void;
 
 export const store = (set: StoreSet) => ({
   ethAddress: null,
-  eraPk: null,
+  eraWallet: null,
   setEthAddress: (address: string) => set((state) => { state.ethAddress = address }),
-  setEraPk: (address: string) => set((state) => { state.eraPk = address }),
+  setWallet: (address: string) => set((state) => { state.eraWallet = address }),
 });
 
 export const useWalletStore = create<WalletStore>()(devtools(mutative(store)));
+
 

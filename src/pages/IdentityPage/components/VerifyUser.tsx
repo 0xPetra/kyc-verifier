@@ -4,15 +4,14 @@ import { invoke } from '@tauri-apps/api/tauri'
 import { useWalletStore } from '../../../stores/useWalletStore';  // replace with your actual store path
 
 import React, { useState } from 'react';
-import { P } from '@tauri-apps/api/event-41a9edf5';
 
 interface CustomResponse {
   message: string
 }
 
 export const VerifyUser = () => {
-  const { eraPk } = useWalletStore((state) => ({
-    eraPk: state.eraPk
+  const { eraWallet } = useWalletStore((state) => ({
+    eraWallet: state.eraWallet
   }));
   const [kycInfo, setKycInfo] = useState<any | null>(null)
   const [userData, setUser] = useState<any | null>(null)
@@ -22,7 +21,7 @@ export const VerifyUser = () => {
   const verifyKYCHandler = async (event) => {
     event.preventDefault();
 
-    if (eraPk === null) return
+    if (eraWallet === null) return
 
     const res: CustomResponse = await invoke('create_veriff_session');
     if (res !== undefined) {
@@ -41,8 +40,8 @@ export const VerifyUser = () => {
   const generateProof = async () => {
     const sessionToken = kycInfo?.verification?.sessionToken;
     const sessionid = kycInfo?.verification?.id;
-    if (eraPk === null || kycInfo?.verification === null) return
-    const res: CustomResponse = await invoke('generate_proof', { erapk: eraPk, sessiontoken: sessionToken, sessionid: sessionid });
+    if (eraWallet === null || kycInfo?.verification === null) return
+    const res: CustomResponse = await invoke('generate_proof', { wallet: eraWallet, sessiontoken: sessionToken, sessionid: sessionid });
 
     if (res !== undefined) {
       const parsed = JSON.parse(JSON.parse(res.message))
@@ -89,7 +88,7 @@ export const VerifyUser = () => {
   return (
     <Box maxW="400px" mx="auto" p={4}>
       <Text>{JSON.stringify(kycInfo)}</Text>
-      {/* <Text>Address: {JSON.stringify(eraPk)}</Text> */}
+      {/* <Text>Address: {JSON.stringify(eraWallet)}</Text> */}
       <Heading as='h5' mb={4}>Verify and mint</Heading>
       <Items />
     </Box>
