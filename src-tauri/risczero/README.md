@@ -1,7 +1,10 @@
-# JSON Example
+# zk Identity - KYC Proofs
 
-This code demonstrates how to prove that a JSON file contains a specific field and value using the RISC Zero zkVM. The JSON file is identified by SHA-256 hash, allowing users to commit to a specific JSON file and then prove some of its contents without revealing the full file.
+For this solution, we use veriff.com since they sign their payload to ensure its integrity and authenticity can be checked. 
+For this, they provide an HMAC for the payload provided:
 
-## Video Tutorial
+"HMAC stands for Hash-Based Message Authentication Code. It's a specific message authentication code (MAC) involving a cryptographic hash function and a secret cryptographic key. It's used to verify both the data integrity and the authenticity of a message simultaneously."
 
-For a walk-through of this example, check out this [excerpt from our workshop at ZK HACK III](https://www.youtube.com/watch?v=6vIgBHx61vc&list=PLcPzhUaCxlCgig7ofeARMPwQ8vbuD6hC5&index=7).
+To create the proof, the HMAC is recalculated in the circuit using our private key (on .env) and compared against the one provided as input. 
+If both are equal, the proof is created, shielding everything except the first name (fristName).
+
